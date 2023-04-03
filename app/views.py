@@ -18,7 +18,7 @@ def home():
             host="localhost",
             database="Bookings",
             user="postgres",
-            password="Redfire3"
+            password=""
         )
         cur = conn.cursor()
         
@@ -57,7 +57,7 @@ def bookings():
             host="localhost",
             database="Bookings",
             user="postgres",
-            password="Redfire3"
+            password=""
         )
         cur = conn.cursor()
 
@@ -98,7 +98,7 @@ def update():
             host="localhost",
             database="Bookings",
             user="postgres",
-            password="Redfire3"
+            password=""
         )
         cur = conn.cursor()
 
@@ -146,7 +146,7 @@ def delete():
             host="localhost",
             database="Bookings",
             user="postgres",
-            password="Redfire3"
+            password=""
         )
         cur = conn.cursor()
 
@@ -172,7 +172,7 @@ def hotels():
             host="localhost",
             database="Bookings",
             user="postgres",
-            password="Redfire3"
+            password=""
         )
         cur = conn.cursor()
 
@@ -209,7 +209,7 @@ def updatehotel():
             host="localhost",
             database="Bookings",
             user="postgres",
-            password="Redfire3"
+            password=""
         )
         cur = conn.cursor()
 
@@ -249,7 +249,7 @@ def deletehotel():
             host="localhost",
             database="Bookings",
             user="postgres",
-            password="Redfire3"
+            password=""
         )
         cur = conn.cursor()
 
