@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1> Hotels </h1>
+<table>
+    <th>Hotel ID</th>
+    <th>Hotel Name</th>
+    <th>Rooms</th>
+  
+  
+    {% for entry in hotels %}
+  
+    <tr>
+      <td>{{entry.hotelid}}</td>
+      <td>{{entry.hotel_name}}</td>
+      <td>{{entry.rooms}}</td>
+    </tr>
+  
+    {% endfor %}
+  </table>
+
+<form action="" method="post">
+  {{delform.csrf_token}}
+
+  <label>{{delform.deleteID.label}}</label>
+  {{delform.deleteID}}
+
+  {{delform.delete()}}
+
+</form>
+
+{% endblock %}

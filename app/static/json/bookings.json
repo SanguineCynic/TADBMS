@@ -1,0 +1,13 @@
+import json
+
+@app.route('/bookings', methods=['GET'])
+def get_all_bookings():
+    booking_list = []
+    for booking in bookings:
+        booking_dict = {'booking_id': booking.booking_id, 'hotel_name': booking.hotel_name, 'check_in_date': booking.check_in_date, 'check_out_date': booking.check_out_date, 'num_guests': booking.num_guests}
+        booking_list.append(booking_dict)
+    
+    with open('bookings.json', 'w') as f:
+        json.dump({'bookings': booking_list}, f)
+    
+    return jsonify({'bookings': booking_list})

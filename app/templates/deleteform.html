@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<table>
+  <th>BookingID</th>
+  <th>Hotel Name</th>
+  <th>Check in Date</th>
+  <th>Check out Date</th>
+  <th># Guests</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+
+
+  {% for entry in data %}
+
+  <tr>
+    <td>{{entry.bookingid}}</td>
+    <td>{{entry.hotel_name}}</td>
+    <td>{{entry.check_in_date}}</td>
+    <td>{{entry.check_out_date}}</td>
+    <td>{{entry.num_guests}}</td>
+    <td>{{entry.cust_fname}}</td>
+    <td>{{entry.cust_lname}}</td>
+  </tr>
+
+  {% endfor %}
+</table>
+
+<form action="" method="post">
+  {{delform.csrf_token}}
+
+  <label>{{delform.deleteID.label}}</label>
+  {{delform.deleteID}}
+
+  {{delform.delete()}}
+
+</form>
+
+{% endblock %}

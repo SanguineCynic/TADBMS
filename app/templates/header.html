@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">TADBMS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('home') }}">Home <span class="visually-hidden">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('bookings')}}">Add a Booking <span class="visually-hidden">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('update')}}">Update a Booking <span class="visually-hidden">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('hotels')}}">Add a Hotel <span class="visually-hidden">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('updatehotel')}}">Update a Hotel <span class="visually-hidden">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

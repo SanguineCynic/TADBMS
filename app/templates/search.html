@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<form method="POST">
+    {{form.csrf_token}}
+  
+    <label>{{form.query.label}}</label>
+    {{form.query(size=60)}}
+    {{form.submit}}
+  </form>
+
+  <center><h1> Bookings </h1></center>
+<table>
+  <th>BookingID</th>
+  <th>Hotel Name</th>
+  <th>Check in Date</th>
+  <th>Check out Date</th>
+  <th># Guests</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+
+{% for entry in bookingrows%}
+<tr>
+  <td>{{entry[0]}}</td>
+  <td>{{entry[1]}}</td>
+  <td>{{entry[2]}}</td>
+  <td>{{entry[3]}}</td>
+  <td>{{entry[4]}}</td>
+  <td>{{entry[5]}}</td>
+  <td>{{entry[6]}}</td>
+</tr>
+
+{% endfor %}
+</table>
+
+<br>
+
+<center><h1> Hotels </h1></center>
+<table>
+  <th>Hotel ID</th>
+  <th>Hotel Name</th>
+  <th>Rooms</th>
+
+{% for entry in hotelrows%}
+<tr>
+  <td>{{entry[0]}}</td>
+  <td>{{entry[1]}}</td>
+  <td>{{entry[2]}}</td>
+</tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hotel Bookings</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css')}}">
+    {% block css %} {% endblock %}
+  </head>
+  <body>
+    <header>
+      {% include "header.html" %}
+    </header>
+    <main>
+      {% with messages =
+        get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+       {% endif %}
+     {% endwith %}
+
+     {% block main %}{% endblock %}
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    {% block js %}{% endblock %}
+  </body>
+</html>

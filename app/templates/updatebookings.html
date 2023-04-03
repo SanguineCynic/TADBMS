@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<table>
+  <th>BookingID</th>
+  <th>Hotel Name</th>
+  <th>Check in Date</th>
+  <th>Check out Date</th>
+  <th># Guests</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+
+
+  {% for entry in data %}
+
+  <tr>
+    <td>{{entry.bookingid}}</td>
+    <td>{{entry.hotel_name}}</td>
+    <td>{{entry.check_in_date}}</td>
+    <td>{{entry.check_out_date}}</td>
+    <td>{{entry.num_guests}}</td>
+    <td>{{entry.cust_fname}}</td>
+    <td>{{entry.cust_lname}}</td>
+  </tr>
+
+  {% endfor %}
+</table>
+
+<form action="" method="post">
+  {{form.csrf_token}}
+
+  <label>BookingID</label>
+  <input type="number" name = "changeID" placeholder="Booking ID to Change"></input><br>
+
+  <label>{{form.hotel_name.label}}</label>
+  {{form.hotel_name(size=30)}}<br>
+
+  <label>{{form.check_in_date.label}}</label>
+  {{form.check_in_date}}<br>
+
+  <label>{{form.check_out_date.label}}</label>
+  {{form.check_out_date}}<br>
+
+  <label>{{form.num_guests.label}}</label>
+  {{form.num_guests}}<br>
+
+  <label>{{form.cust_fname.label}}</label>
+  {{form.cust_fname}}<br>
+
+  <label>{{form.cust_lname.label}}</label>
+  {{form.cust_lname}}<br>
+
+  {{form.submit()}}
+</form>
+
+<a href="{{url_for('delete')}}"><button>Delete Booking</button></a>
+
+{% endblock %}

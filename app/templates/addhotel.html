@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+    <h1>Add Hotel</h1>
+    <hr>
+
+    <table>
+        <th>Hotel ID</th>
+        <th>Hotel Name</th>
+        <th>Rooms</th>
+      
+      
+        {% for entry in data %}
+      
+        <tr>
+          <td>{{entry.hotelid}}</td>
+          <td>{{entry.hotel_name}}</td>
+          <td>{{entry.rooms}}</td>
+        </tr>
+      
+        {% endfor %}
+      </table>
+
+    <form action="" method="post">
+      {{form.csrf_token}}
+
+      <label>{{form.hotel_name.label}}</label><br>
+      {{form.hotel_name(size=30)}}<br>
+
+      <label>{{form.rooms.label}}</label><br>
+      {{form.rooms}}<br>
+
+      {{form.submit()}}
+
+    </form>
+
+    {% endblock %}
+

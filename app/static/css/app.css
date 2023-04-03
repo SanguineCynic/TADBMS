@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    padding-top: 5rem;
+    background-color: #dbdbdb ;
+}
+
+table{
+  background-color: white;
+  column-gap: 0;
+  border: 3px solid black;
+  margin: auto;
+  font-family: Open Sans;
+}
+    table *{
+      font-family: Open Sans;
+    }
+
+    th{
+      border: 1px solid black;
+      padding: 12px;
+    }
+
+    td{
+      border:1px solid black;
+      padding: 5px;
+      text-align: center;
+    }

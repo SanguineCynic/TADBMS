@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<center><h1> Hotels </h1></center>
+<table>
+    <th>Hotel ID</th>
+    <th>Hotel Name</th>
+    <th>Rooms</th>
+  
+  
+    {% for entry in hotels %}
+  
+    <tr>
+      <td>{{entry.hotelid}}</td>
+      <td>{{entry.hotel_name}}</td>
+      <td>{{entry.rooms}}</td>
+    </tr>
+  
+    {% endfor %}
+  </table>
+
+  <form action="" method="post">
+    {{form.csrf_token}}
+
+    <label>Hotel ID</label>
+    <input type="number" name = "changeID" placeholder="Hotel ID to Change"></input><br>
+
+    <label>{{form.hotel_name.label}}</label><br>
+    {{form.hotel_name(size=30)}}<br>
+
+    <label>{{form.rooms.label}}</label><br>
+    {{form.rooms}}<br>
+
+    {{form.submit()}}
+
+  </form>
+
+<a href="{{url_for('deletehotel')}}"><button>Delete Hotel</button></a>
+
+{% endblock %}
