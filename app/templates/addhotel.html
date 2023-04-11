@@ -2,13 +2,16 @@
 
 {% block main %}
 
-    <h1>Add Hotel</h1>
+    <h1>Add Hotel Destination</h1>
     <hr>
 
     <table>
         <th>Hotel ID</th>
-        <th>Hotel Name</th>
+        <th>Hotel Destination</th>
         <th>Rooms</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Availability</th>
       
       
         {% for entry in data %}
@@ -17,6 +20,10 @@
           <td>{{entry.hotelid}}</td>
           <td>{{entry.hotel_name}}</td>
           <td>{{entry.rooms}}</td>
+          <td>{{entry.price}}</td>
+          <td>{{entry.rating}}</td>
+          <td>{{entry.availability}}</td>
+
         </tr>
       
         {% endfor %}
@@ -30,6 +37,15 @@
 
       <label>{{form.rooms.label}}</label><br>
       {{form.rooms}}<br>
+
+      <label>{{form.price.label}}</label><br>
+      {{form.price}}<br>
+
+      <label>{{form.rating.label}}</label><br>
+      {{form.rating}}<br>
+
+      <label>{{form.availability.label}}</label><br>
+      {{form.availability}}<br>
 
       {{form.submit()}}
 

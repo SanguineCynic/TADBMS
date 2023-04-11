@@ -13,7 +13,7 @@
   <center><h1> Bookings </h1></center>
 <table>
   <th>BookingID</th>
-  <th>Hotel Name</th>
+  <th>Hotel Destination</th>
   <th>Check in Date</th>
   <th>Check out Date</th>
   <th># Guests</th>
@@ -39,14 +39,20 @@
 <center><h1> Hotels </h1></center>
 <table>
   <th>Hotel ID</th>
-  <th>Hotel Name</th>
+  <th>Hotel Destination</th>
   <th>Rooms</th>
+  <th>Price</th>
+  <th>Rating</th>
+  <th>Availability</th>
 
 {% for entry in hotelrows%}
 <tr>
   <td>{{entry[0]}}</td>
   <td>{{entry[1]}}</td>
   <td>{{entry[2]}}</td>
+  <td>${{entry[3]}}</td>
+  <td>{{entry[4]}}</td>
+  <td>{{entry[5]}}</td>
 </tr>
 
 {% endfor %}
