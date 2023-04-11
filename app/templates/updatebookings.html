@@ -4,12 +4,13 @@
 
 <table>
   <th>BookingID</th>
-  <th>Hotel Name</th>
+  <th>Hotel Destination</th>
   <th>Check in Date</th>
   <th>Check out Date</th>
   <th># Guests</th>
   <th>First Name</th>
   <th>Last Name</th>
+  <th>Confirmation</th>
 
 
   {% for entry in data %}
@@ -22,6 +23,7 @@
     <td>{{entry.num_guests}}</td>
     <td>{{entry.cust_fname}}</td>
     <td>{{entry.cust_lname}}</td>
+    <td>{{entry.confirmed}}</td>
   </tr>
 
   {% endfor %}
@@ -50,6 +52,15 @@
 
   <label>{{form.cust_lname.label}}</label>
   {{form.cust_lname}}<br>
+
+  <label>{{form.cust_age.label}}</label><br>
+      {{form.cust_age}}<br>
+
+  <label>{{form.cust_email.label}}</label><br>
+  {{form.cust_email}}<br>
+
+  <label>{{form.cust_phone_number.label}}</label><br>
+  {{form.cust_phone_number}}<br>
 
   {{form.submit()}}
 </form>

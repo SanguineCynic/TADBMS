@@ -5,8 +5,11 @@
 <h1> Hotels </h1>
 <table>
     <th>Hotel ID</th>
-    <th>Hotel Name</th>
+    <th>Hotel Destination</th>
     <th>Rooms</th>
+    <th>Price</th>
+    <th>Rating</th>
+    <th>Availability</th>
   
   
     {% for entry in hotels %}
@@ -15,6 +18,9 @@
       <td>{{entry.hotelid}}</td>
       <td>{{entry.hotel_name}}</td>
       <td>{{entry.rooms}}</td>
+      <td>{{entry.price}}</td>
+      <td>{{entry.rating}}</td>
+      <td>{{entry.availability}}</td>
     </tr>
   
     {% endfor %}
